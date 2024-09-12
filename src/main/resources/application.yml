@@ -1,2 +1,14 @@
 server:
     port: 3000
+
+providers:
+    list:
+    - name: provider1
+      url: http://api.provider1.com/ip
+      rateLimit: 1000
+    - name: provider2
+      url: http://api.provider2.com/ip
+      rateLimit: 500
+    - name: provider3
+      url: http://api.provider3.com/ip
+      rateLimit: 2000
