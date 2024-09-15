@@ -2,7 +2,10 @@ package com.springapp.Controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springapp.Configuration.Config.Providers;
 import com.springapp.services.Interfaces.IServiceProviders;
+
+import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,8 +19,8 @@ public class LocationController {
     }
 
     @GetMapping("/api/location/")
-    public String getLocation(@RequestParam String ip) {
-        return _serviceProviders.getOptimalProvider().get(1);
+    public List<Providers> getLocation() {
+        return _serviceProviders.getOptimalProvider();
     }
 
 }
